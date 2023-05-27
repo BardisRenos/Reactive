@@ -5,13 +5,10 @@ import com.example.reactive.entity.NameBasics;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.time.Duration;
-import java.util.concurrent.Delayed;
 
 @RestController
 @RequestMapping(path = "api/v1/actors")
@@ -27,11 +24,6 @@ public class NameController {
                 .doOnNext(NameBasics -> {
                 System.out.println("Fetching : " + NameBasics.getNconst());
         });
-    }
-
-    @GetMapping("/byName")
-    public Mono<NameBasics> getActorByPrimaryName(@RequestParam String primaryName) {
-        return nameRepository.findByPrimaryName(primaryName);
     }
 
 }

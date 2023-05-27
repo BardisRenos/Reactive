@@ -24,19 +24,4 @@ public class ClientController {
                 System.out.println("Fetching : " + client.getClientName());
         });
     }
-
-//    @GetMapping("/name")
-//    public Flux<ClientDTO> getClientByName(String name) {
-//        return clientService.getClientByName(name);
-//    }
-//
-//    @GetMapping("/{email}")
-//    public Mono<ClientDTO> getClientByEmail(String email) {
-//        return clientService.getClientWithEmail(email);
-//    }
-//
-//    @PostMapping("/insert")
-//    public Mono<ClientDTO> saveClient(@RequestBody Mono<ClientDTO> clientDTOMono) {
-//        return clientService.saveClient(clientDTOMono);
-//    }
 }
